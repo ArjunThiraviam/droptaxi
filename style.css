@@ -3564,11 +3564,10 @@ a.text-theme:hover,
 .widget_archive a::before,
 .widget_categories a::before,
 .wp-block-categories a::before {
-  content: "\f07c";
+  content: "\21E8";
   position: absolute;
   left: 0;
   top: 17px;
-  font-family: var(--icon-font);
   font-weight: 500;
 }
 .widget_nav_menu li,
@@ -4426,7 +4425,7 @@ a.text-theme:hover,
   border-bottom: none;
 }
 .footer-widget.widget_meta a:before, .footer-widget.widget_pages a:before, .footer-widget.widget_archive a:before, .footer-widget.widget_categories a:before, .footer-widget.widget_nav_menu a:before {
-  content: "\f061";
+  content: "\21E8";
   font-weight: 900;
   left: 0;
   top: 0;

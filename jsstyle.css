@@ -18152,12 +18152,12 @@ Note: All blocks can be used multiple times, so classes are used.
     nav.navbar #navbar ul.navbar-nav ul.children li.menu-item-has-children > a:after,
     nav.navbar #navbar ul.navbar-nav ul.sub-menu li.menu-item-has-children > a:after {
       display: inline-block;
-      font: normal normal normal 14px/1 FontAwesome;
+      /* font: normal normal normal 14px/1 FontAwesome; */
       font-size: inherit;
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      content: "\f0da";
+      content: "\21E8";
       margin-top: 3px;
       margin-left: 8px;
     }
@@ -18459,14 +18459,14 @@ Note: All blocks can be used multiple times, so classes are used.
     }
     nav.navbar ul.navbar-nav > li.menu-item-has-children > a:after {
       display: inline-block;
-      font: normal normal normal 14px/1 FontAwesome;
+      /* font: normal normal normal 14px/1 FontAwesome; */
       font-size: inherit;
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-size: 18pt;
       vertical-align: middle;
-      content: "\f0da";
+      content: "\21E8";
       margin: 4px 0 0 8px;
       right: 25px;
       top: 15px;
@@ -38527,7 +38527,7 @@ hr {
     }
 
     .btn-card.card .btn-dark {
-        width: 8.5rem;
+        width: 148px;
         height: 2.875rem;
         border-radius: 0.25rem
     }
@@ -38666,18 +38666,7 @@ hr {
 }
 
 .menu {
-    position: absolute;
-    top: 40px;
-    left: 0;
     width: 200px;
-    height: 200px;
-    overflow: auto;
-    z-index: 3;
-    background: #fff;
-    background-clip: padding-box;
-    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2);
-    max-height: 0;
-    overflow: auto
 }
 
 .menu.showDD {
@@ -39017,4 +39006,13 @@ form {
 }
 .hp-passenger {
     min-width: 100px;
+}
+
+@media screen and (max-width:1970px) {
+    .homepage-block-1 .large-image-center img:not(.splash), .homepage-block-1 #large-image img:not(.splash) {
+        margin-left: -250px;
+    }
+    .homepage-block-1 .large-image-center .splash, .homepage-block-1 #large-image .splash {
+        right: 10px
+    }
 }
