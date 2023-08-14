@@ -959,287 +959,7 @@ ul.wp-block-rss a {
     --bs-gutter-x: 40px;
   }
 }
-/*------------------- 2.3. Input -------------------*/
-select,
-.form-control,
-.form-select,
-textarea,
-input {
-  height: 55px;
-  padding: 0 25px 0 25px;
-  padding-right: 45px;
-  border: 1px solid var(--border-color);
-  color: var(--body-color);
-  background-color: var(--white-color);
-  border-radius: 9999px;
-  border-radius: 0;
-  font-size: 16px;
-  width: 100%;
-}
-select:focus,
-.form-control:focus,
-.form-select:focus,
-textarea:focus,
-input:focus {
-  outline: 0;
-  box-shadow: none;
-  background-color: var(--white-color);
-  border-color: var(--theme-color);
-}
-select::-moz-placeholder,
-.form-control::-moz-placeholder,
-.form-select::-moz-placeholder,
-textarea::-moz-placeholder,
-input::-moz-placeholder {
-  color: var(--body-color);
-}
-select::-webkit-input-placeholder,
-.form-control::-webkit-input-placeholder,
-.form-select::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder,
-input::-webkit-input-placeholder {
-  color: var(--body-color);
-}
-select:-ms-input-placeholder,
-.form-control:-ms-input-placeholder,
-.form-select:-ms-input-placeholder,
-textarea:-ms-input-placeholder,
-input:-ms-input-placeholder {
-  color: var(--body-color);
-}
-select::placeholder,
-.form-control::placeholder,
-.form-select::placeholder,
-textarea::placeholder,
-input::placeholder {
-  color: var(--body-color);
-}
-select.style2,
-.form-control.style2,
-.form-select.style2,
-textarea.style2,
-input.style2 {
-  padding-left: 52px;
-  background-image: none;
-}
-select.style2 ~ i,
-.form-control.style2 ~ i,
-.form-select.style2 ~ i,
-textarea.style2 ~ i,
-input.style2 ~ i {
-  color: var(--theme-color);
-  font-weight: 400;
-  top: 19px;
-  right: 25px !important;
-  left: auto !important;
-  max-width: 16px;
-}
 
-.form-group {
-  margin-bottom: var(--bs-gutter-x);
-  position: relative;
-}
-.form-group > i {
-  display: inline-block;
-  position: absolute;
-  right: 25px;
-  top: 19px;
-  font-size: 16px;
-  color: var(--body-color);
-}
-.form-group > i.fa-envelope {
-  padding-top: 1px;
-}
-.form-group > i.fa-comment {
-  margin-top: -2px;
-}
-.form-group > i.fa-chevron-down {
-  width: 17px;
-  background-color: var(--white-color);
-}
-.form-group.has-label > i {
-  top: 50px;
-}
-
-[class*=col-].form-group > i {
-  right: calc(var(--bs-gutter-x) / 2 + 25px);
-}
-[class*=col-].form-group .style2 ~ i {
-  left: calc(var(--bs-gutter-x) / 2 + 25px);
-}
-
-.form-select,
-select {
-  display: block;
-  width: 100%;
-  line-height: 1.5;
-  vertical-align: middle;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
-  background-position: right 26px center;
-  background-repeat: no-repeat;
-  background-size: 16px 12px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
-}
-
-option:checked, option:focus, option:hover {
-  background-color: var(--theme-color);
-  color: var(--white-color);
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-textarea.form-control,
-textarea {
-  min-height: 150px;
-  padding-top: 16px;
-  padding-bottom: 17px;
-  border-radius: 0;
-}
-
-input[type=checkbox] {
-  visibility: hidden;
-  opacity: 0;
-  display: inline-block;
-  vertical-align: middle;
-  width: 0;
-  height: 0;
-  display: none;
-}
-input[type=checkbox]:checked ~ label:before {
-  content: "\f00c";
-  color: var(--white-color);
-  background-color: var(--theme-color);
-  border-color: var(--theme-color);
-}
-input[type=checkbox] ~ label {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-  display: block;
-}
-input[type=checkbox] ~ label:before {
-  content: "";
-  font-family: var(--icon-font);
-  font-weight: 700;
-  position: absolute;
-  left: 0px;
-  top: 3.5px;
-  background-color: var(--white-color);
-  border: 1px solid var(--border-color);
-  height: 18px;
-  width: 18px;
-  line-height: 18px;
-  text-align: center;
-  font-size: 12px;
-}
-
-input[type=radio] {
-  visibility: hidden;
-  opacity: 0;
-  display: inline-block;
-  vertical-align: middle;
-  width: 0;
-  height: 0;
-  display: none;
-}
-input[type=radio] ~ label {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-  line-height: 1;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 0;
-}
-input[type=radio] ~ label::before {
-  content: "\f111";
-  position: absolute;
-  font-family: var(--icon-font);
-  left: 0;
-  top: -2px;
-  width: 20px;
-  height: 20px;
-  padding-left: 0;
-  font-size: 0.6em;
-  line-height: 19px;
-  text-align: center;
-  border: 1px solid var(--theme-color);
-  border-radius: 100%;
-  font-weight: 700;
-  background: var(--white-color);
-  color: transparent;
-  transition: all 0.2s ease;
-}
-input[type=radio]:checked ~ label::before {
-  border-color: var(--theme-color);
-  background-color: var(--theme-color);
-  color: var(--white-color);
-}
-
-label {
-  margin-bottom: 0.5em;
-  margin-top: -0.3em;
-  display: block;
-  color: var(--title-color);
-  font-family: var(--body-font);
-  font-size: 16px;
-}
-
-textarea.is-invalid,
-select.is-invalid,
-input.is-invalid,
-.was-validated input:invalid {
-  border: 1px solid var(--error-color) !important;
-  background-position: right calc(0.375em + 0.8875rem) center;
-  background-image: none;
-}
-textarea.is-invalid:focus,
-select.is-invalid:focus,
-input.is-invalid:focus,
-.was-validated input:invalid:focus {
-  outline: 0;
-  box-shadow: none;
-}
-
-textarea.is-invalid {
-  background-position: top calc(0.375em + 0.5875rem) right calc(0.375em + 0.8875rem);
-}
-
-.row.no-gutters > .form-group {
-  margin-bottom: 0;
-}
-
-.form-messages {
-  display: none;
-}
-.form-messages.mb-0 * {
-  margin-bottom: 0;
-}
-.form-messages.success {
-  color: var(--success-color);
-  display: block;
-}
-.form-messages.error {
-  color: var(--error-color);
-  display: block;
-}
-.form-messages pre {
-  padding: 0;
-  background-color: transparent;
-  color: inherit;
-}
 
 /*------------------- 2.4. Slick Slider -------------------*/
 .slick-track > [class*=col] {
@@ -5601,6 +5321,8 @@ a.text-theme:hover,
 .widget-area {
   padding-top: 100px;
   padding-bottom: 60px;
+  max-width: 90%;
+  margin: auto;
   /* Medium devices */
 }
 @media (max-width: 991px) {
@@ -20590,3 +20312,339 @@ hr.style1 {
 /*------------------- Contact -------------------*/
 /* -------------------------- Contact Start ---------------------------------- */
 /* -------------------------- Contact End ---------------------------------- */
+
+
+.form-group label {
+  color: #656565;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.trip {
+  border-radius: 0px;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+}
+.cars-slider {
+  height: 650px;
+  background-image: url("img/FormBackground7.jpg");
+  background-size: cover;
+  padding-top: 100px;
+}
+.cabTitle {
+  text-align: left;
+  margin-top: 0px;
+}
+.cabItem {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  color: #222;
+  box-shadow: 2px 2px 5px #00000075;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.featureItems {
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+.featureItems li {
+  float: left;
+  margin-right: 30px;
+}
+.offerText {
+  color: red;
+}
+.cabPrice {
+  font-weight: bolder;
+}
+#enquiryForm .modal-header {
+  background: #007bff;
+}
+.modal-title {
+  color: #fff;
+  letter-spacing: 4px;
+}
+/* Vehicle Selection */
+
+.vehicle_features ul li {
+  font-size: 12px;
+}
+.accordion-button:not(.collapsed) {
+  color: #0c63e4;
+  background-color: #e7f1ff;
+  box-shadow: inset 0 calc(-1 * 1px) 0 #dee2e6;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url(https://dialtaxi.in/assets/img/dropdown.svg);
+  transform: rotate(-180deg);
+}
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-image: url(https://dialtaxi.in/assets/img/dropdown.svg);
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+.ma-1 {
+  margin: 1px;
+}
+.cab_selection_color {
+  color: var(--vehicle-selection-color);
+}
+.border-none {
+  border: none !important;
+}
+/* Vechicle Selection End */
+.help-block {
+  color: red;
+}
+.daterangepicker select.monthselect,
+.daterangepicker select.yearselect {
+  display: none;
+}
+.reservation-form:after {
+  border: 0px solid transparent !important;
+}
+.cabCard {
+  box-shadow: 1px 2px 3px #99999940;
+}
+.cabImage {
+  background-size: cover;
+  height: 100px;
+  width: 100%;
+  background-position: center;
+}
+
+#searchCabForm .form-group {
+  background: #fff;
+  padding: 10px;
+  box-shadow: 1px 1px 3px #22222226;
+  margin-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  float: left;
+}
+#searchCabForm .form-control {
+  border: 0px !important;
+  background: #fff !important;
+  padding: 0px !important;
+}
+#searchCabForm .form-control:focus {
+  box-shadow: 0 0 0 0.2rem #fff !important;
+}
+.form-control:disabled {
+  opacity: 0.5 !important;
+}
+.dateLabel {
+  width: 100%;
+  float: left;
+}
+#searchCabForm .dates {
+  width: 60% !important;
+  float: left;
+  border-right: 1px solid #ccc !important;
+  border-radius: 0px;
+}
+#searchCabForm .dates:after {
+  content: "\f0d7";
+}
+#searchCabForm .times {
+  width: 40% !important;
+  float: left;
+  text-align: center;
+}
+#bookNow {
+  width: 100%;
+  height: 75px;
+  border-radius: 0px;
+  font-size: 1.5rem;
+}
+.trip {
+  background: #fff;
+  color: #6a6a6a;
+}
+.tarrif h4 {
+  font-size: 16px;
+}
+.tarrifTitle {
+  background-color: #004186;
+  color: #fff;
+}
+.tarrif .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgb(233 245 255);
+}
+.features {
+  background: #fff;
+  border-top: 1px solid #eaeaea;
+}
+.features h4 {
+  text-transform: capitalize !important;
+  font-size: 18px !important;
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 10px;
+  color: #00448c;
+}
+.features p {
+  margin-bottom: 0px;
+  min-height: 100px;
+  text-align: center;
+  color: #555;
+}
+.features .card img {
+  width: 80px;
+  padding: 15px;
+  background: #f7f7f7;
+  margin: auto;
+  border-radius: 50%;
+  border: 1px solid #eaeaea;
+  margin-bottom: 10px;
+}
+.blogs {
+  background: #f6f7fb;
+  border-top: 1px solid #eaeaea;
+}
+.blogs h4 {
+  text-transform: capitalize !important;
+  font-size: 18px !important;
+  margin: 0px;
+  margin-bottom: 5px;
+  color: #00448c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.blogs p {
+  margin-bottom: 0px;
+  color: #555;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+  height: 85px;
+  margin-bottom: 10px;
+}
+.blogs .card img {
+  width: 100%;
+  background: #f7f7f7;
+  margin: auto;
+  border: 1px solid #eaeaea;
+  margin-bottom: 10px;
+}
+.routes {
+  background: #c8c8c81a;
+}
+.odd {
+  background: #004186 !important;
+}
+.odd td,
+.routes .odd th {
+  color: #ffeb3b;
+}
+.odd i {
+  color: #fff;
+}
+.even {
+  background: #ffec3b !important;
+}
+.even td,
+.routes .even th {
+  color: #333;
+}
+.even i {
+  color: #333;
+}
+a:hover {
+  text-decoration: none !important;
+}
+footer .om-container {
+  max-width: none !important;
+}
+
+.form-container {
+  /* border: 2px solid #fff; */
+  position: relative;
+}
+
+.form-container::before {
+  background-color: #fff;
+  opacity: 0.5;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.form-inner-container {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+}
+
+.trip-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trip-selector .first-trip {
+  margin-right: 15px;
+}
+
+.trip-selector label{
+  margin-bottom: 0px;
+  width: 200px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 4px;
+
+}
+
+.form-group label {
+  color: #000;
+}
+
+.trip-selector label{
+  background-color: rgba(255,255,255,0.5);
+  position: relative;
+  color: #000;
+  font-weight: 800;
+}
+
+.trip-selector label:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.trip-selector label input {
+  margin-right: 10px;
+}
+
+.returnDate.hide {
+  display: none;
+}
+
+.boxShaddow {
+  box-shadow: 0 4px rgba(255,255,255,0.5);
+}
