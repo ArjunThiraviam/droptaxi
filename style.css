@@ -141,13 +141,6 @@ input:focus {
   box-shadow: none;
 }
 
-img:not([draggable]),
-embed,
-object,
-video {
-  max-width: 100%;
-  height: auto;
-}
 
 ul {
   list-style-type: disc;
@@ -20423,13 +20416,14 @@ hr.style1 {
 
 #searchCabForm .form-group {
   background: #fff;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 1px 1px 3px #22222226;
   margin-bottom: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
   width: 100%;
   float: left;
+  border-radius: 15px;
 }
 #searchCabForm .form-control {
   border: 0px !important;
@@ -20463,7 +20457,6 @@ hr.style1 {
 #bookNow {
   width: 100%;
   height: 75px;
-  border-radius: 0px;
   font-size: 1.5rem;
 }
 .trip {
@@ -20583,6 +20576,7 @@ footer .om-container {
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 25px;
 }
 .form-inner-container {
   padding: 20px;
@@ -20616,7 +20610,10 @@ footer .om-container {
   font-weight: 800;
   color: #000;
   margin-bottom: 4px;
+}
 
+.trip-selector .trip {
+  border-radius: 15px;
 }
 
 .form-group label {
@@ -20624,18 +20621,12 @@ footer .om-container {
 }
 
 .trip-selector label{
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgb(255,255,255);
   position: relative;
   color: #000;
   font-weight: 800;
 }
 
-.trip-selector label:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 
 .trip-selector label input {
   margin-right: 10px;
@@ -20645,6 +20636,538 @@ footer .om-container {
   display: none;
 }
 
-.boxShaddow {
+  
+.cta-men {
+  background-image: url(img/cta-men.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 130px;
+  bottom: -30px;
+  z-index: -1;
+}
+
+.cta-section {
+  background-image: url(img/texture.png);
+  clip-path: polygon(0 0,100% 0,100% 55%,85% 100%,0 100%);
+  background-repeat: repeat;
+  background-size: cover;
+  background-color: #222;
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
+  padding: 40px 0px;
+}
+
+.cta-section h2 {
+  color: #efefef
+}
+
+/* .boxShaddow {
   box-shadow: 0 4px rgba(255,255,255,0.5);
+} */
+
+.progressbar {
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  width: 60%;
+  margin: 0 auto 30px;
+}
+.progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 30%;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 25px;
+  line-height: 25px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: white;
+  border-radius: 50%;
+  margin: 0 auto 5px auto;
+  position: relative;
+  z-index: 11;
+}
+/*progressbar connectors*/
+.progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: 1; /*put it behind the numbers*/
+}
+.progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+.progressbar li.active:before,  .progressbar li.active:after{
+  background: #007bff;
+  color: white;
+}
+
+#searchCabForm fieldset {
+  margin-bottom: 40px;
+}
+.card.ptr-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.ptr-card img {
+  width: 12rem;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+
+.btn-primary#bookNow {
+  border-radius: 15px;
+}
+
+#searchCabForm .form-group a {
+  text-decoration: none;
+  
+  --bg-size: 400%;
+  --color-one: #0fb32a;
+  --color-two: #29a9e1;
+  font-family: sans-serif;
+  font-size: clamp(3rem, 25vmin, 8rem);
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  font-weight: 600;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  #searchCabForm .form-group a {
+    animation: move-bg 8s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
+
+
+
+@media screen and (min-width:768px) {
+  .callus-logo {
+    position: fixed;
+    bottom: 10px;
+    max-width: 80px;
+    right: 10px;
+    text-align: center;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    line-height: 1;
+    font-size: 14px;
+    z-index: 99;
+}
+
+.phonecall {
+    margin-top: 15px;
+    max-width: 40px;
+    margin-bottom: 5px;
+}
+
+.whatsapp {
+    max-width: 64px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.callus-logo span {
+    margin-top: 5px;
+    font-size: 16px;
+    display: block;
+}
+
+.callus-logo a {
+    color: #fff;
+}
+
+.click-to {
+    text-align: center;
+
+}
+
+.click-to img {
+    max-width: 100%;
+}
+}
+
+@media all and (min-width: 1400px) {
+  #places-section .container {
+      max-width: 80%;
+  }
+  .cta-section .container {
+    max-width: 80%;
+  }
+}
+
+
+#places-section {
+  margin: 40px 0px;
+}
+#places-section a {
+  font-weight: 600;
+}
+
+
+.single-taxi-one {
+  position: relative;
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f3f3f3;
+  border-radius: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #fff;
+  border: 2px solid #1274b9;
+}
+.single-taxi-one .inner-content {
+  position: relative;
+  z-index: 10;
+}
+.single-taxi-one:before, .single-taxi-one:after {
+  content: '';
+  position: absolute;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  transition: all .4s ease;
+  border-radius: 10px;
+}
+.single-taxi-one:before {
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  border-top: 2px solid #FFC000;
+  border-bottom: 2px solid #FFC000;
+}
+.single-taxi-one:after {
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  border-left: 2px solid #FFC000;
+  border-right: 2px solid #FFC000;
+}
+.single-taxi-one h3 {
+  color: #111111;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.single-taxi-one .icon-block {
+  border-radius: 50%;
+  background-color: #111111;
+  width: 99px;
+  height: 99px;
+  margin-bottom: 25px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.single-taxi-one .icon-block i {
+  font-size: 56px;
+  color: #FFFFFF;
+  line-height: 99px;
+}
+.single-taxi-one ul.feature-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 0 70px;
+  margin-top: 15px;
+}
+.single-taxi-one ul.feature-list li {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  color: #717171;
+  font-size: 16px;
+}
+.single-taxi-one ul.feature-list li + li {
+  margin-top: 7px;
+}
+.single-taxi-one ul.feature-list li span.price-line {
+  font-weight: 600;
+}
+.single-taxi-one .book-taxi-btn {
+  display: inline-block;
+  vertical-align: middle;
+  color: #717171;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #F3F3F3;
+  border-radius: 29px;
+  padding: 12px 77px;
+  transition: all .4s ease;
+  margin-top: 30px;
+}
+.single-taxi-one .book-taxi-btn:hover {
+  color: #111111;
+  background-color: #FFC000;
+}
+.single-taxi-one:hover:before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+.single-taxi-one:hover:after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+.single-taxi-one:hover .book-taxi-btn {
+  color: #111111;
+  background-color: #FFC000;
+}
+.taxi-page {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+.single-taxi-one {
+  margin-bottom: 30px;
+}
+
+.single-taxi-details-one {
+  padding: 120px 0;
+}
+.single-taxi-details-one .image-block {
+  position: relative;
+  overflow: hidden;
+  margin-right: 30px;
+  border-radius: 10px;
+}
+.single-taxi-details-one .image-block > img {
+  width: 100%;
+}
+.single-taxi-details-one .image-block .icon-block {
+  border-radius: 50%;
+  background-color: #111111;
+  text-align: center;
+  width: 99px;
+  height: 99px;
+  margin-bottom: 25px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.single-taxi-details-one .image-block .icon-block i {
+  font-size: 56px;
+  color: #FFFFFF;
+  line-height: 99px;
+}
+.single-taxi-details-one .block-title {
+  margin-bottom: 25px;
+  margin-top: -15px;
+}
+.single-taxi-details-one .content-block p {
+  margin: 0;
+}
+.single-taxi-details-one .content-block hr.style-one {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.single-taxi-details-one .content-block .features-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.single-taxi-details-one .content-block .features-list li {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  color: #111111;
+  font-size: 16px;
+}
+.single-taxi-details-one .content-block .features-list li + li {
+  margin-top: 10px;
+}
+.single-taxi-details-one .content-block .features-list li .name-line {
+  color: #717171;
+  font-weight: 400;
+}
+.single-taxi-details-one .content-block .features-list li .price-line {
+  font-weight: 700;
+}
+.single-taxi-details-one .content-block .book-btn {
+  display: inline-block;
+  vertical-align: middle;
+  color: #111111;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #FFC000;
+  border-radius: 28.5px;
+  width: 100%;
+  max-width: 230px;
+  height: 57px;
+  line-height: 57px;
+  text-align: center;
+  margin-top: 50px;
+  transition: all .4s ease;
+}
+.single-taxi-details-one .content-block .book-btn:hover {
+  background-color: #111111;
+  color: #fff;
+}
+
+#tariff-section .row {
+ justify-content: center; 
+}
+
+#tariff-section {
+  background-color: #efefef;
+  padding: 40px 0px;
+  z-index: 2;
+  position: relative;
+}
+
+
+.single-taxi-one img {
+  /* width: 26rem; */
+  height: 12rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media (min-width: 900px) {
+  .car-image {
+    display: block;
+    -webkit-transform: rotate(90deg) translateY(50%) scale(1.25);
+    transform: rotate(90deg) translateY(50%) scale(1.25);
+    width: 40rem;
+    /* height: 300px; */
+    position: absolute;
+    bottom: 22px;
+    left: 35%;
+}
+}
+
+.choose__image.square {
+  border: 5px #ccc solid;
+  width: 8rem;
+  border-radius: 20px;
+}
+
+.choose__image-container img {
+  width: 80px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+#about-section {
+  min-height: 500px;
+}
+
+#about-section .row {
+  max-width: 80%;
+  margin: 40px auto;
+}
+
+#about-section .col-md-4 {
+  text-align: center;
+
+}
+
+#about-section .col-md-4 > div {
+  margin-bottom: 2rem;  
+}
+
+#about-section .col-md-4 h6 {
+  font-weight: 600;
+  --bg-size: 400%;
+  --color-one: #1274b9;
+  --color-two: #29a9e1;
+  font-family: sans-serif;
+  font-size: clamp(20px, 25vmin, 15px);
+  background: linear-gradient( 90deg, var(--color-one), var(--color-two), var(--color-one) ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text; 
+  animation: move-bg 8s linear infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #about-section .col-md-4 h6, section .row h2  {
+    animation: move-bg 8s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
+
+section .row {
+  width: 100%;
+  text-align: center;
+}
+section .row h2 {
+    font-weight: 600;
+    --bg-size: 400%;
+    --color-one: #ffc61a;
+    --color-two: #e03923;
+    font-family: sans-serif;
+    font-size: clamp(45px, 25vmin, 35px);
+    background: linear-gradient( 90deg, var(--color-one), var(--color-two), var(--color-one) ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
+    animation: move-bg 8s linear infinite;
+    margin: auto;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 3.5rem;
+  padding-top: 2rem;
+}
+
+.cta-section p {
+  color: #efefef;
 }

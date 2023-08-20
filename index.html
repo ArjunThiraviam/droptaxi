@@ -125,11 +125,10 @@
                   >Home</a
                 >
               </li>
-              <li><a href="about.html">About</a></li>
-              <!--<li><a href="https://droptaximadurai.in#form">Drop Taxi</a></li>-->
-              <li><a href="package.html">Packages</a></li>
-              <li><a href="tariff.html">Tariff</a></li>
-              <li><a href="places.html">Places</a></li>
+              <li><a href="#about-section">About</a></li>
+              <!-- <li><a href="package.html">Packages</a></li> -->
+              <li><a href="#tariff-section">Tariff</a></li>
+              <li><a href="#places-section">Places</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
@@ -146,285 +145,677 @@
               novalidate="novalidate"
               class="fv-form fv-form-bootstrap"
               data-gtm-form-interact-id="0"
+              method="post"
             >
-              <button
-                type="submit"
-                class="fv-hidden-submit"
-                style="display: none; width: 0px; height: 0px"
-              ></button>
-              <div class="">
-                <div class="col-sm-12 trip-selector">
-                  <label class="trip first-trip boxShaddow"
-                    ><input
-                      type="radio"
-                      name="trip"
-                      value="1"
-                      onclick="$(&#39;.drop_date_group input, .drop_date_group select&#39;).attr(&#39;disabled&#39;,true)"
-                      checked=""
-                      data-fv-field="trip"
-                      data-gtm-form-interact-field-id="1"
-                    />
-                    ONE WAY</label
-                  >
-                  <label class="trip round-trip"
-                    ><input
-                      type="radio"
-                      name="trip"
-                      value="2"
-                      onclick="$(&#39;.drop_date_group input, .drop_date_group select&#39;).removeAttr(&#39;disabled&#39;,true);getDropTime()"
-                      data-fv-field="trip"
-                      data-gtm-form-interact-field-id="0"
-                    />
-                    ROUND TRIP</label
-                  >
-                  <small
-                    class="help-block"
-                    data-fv-validator="notEmpty"
-                    data-fv-for="trip"
-                    data-fv-result="VALID"
-                    style="display: none"
-                    >Trip is required</small
-                  >
-                </div>
-                <span class="row form-container">
-                  <span class="form-inner-container">
-                    <div class="col-sm-12 col-12 p-1">
-                      <div class="form-group">
-                        <label class="mb-0">PICK-UP LOCATION</label
-                        ><a
-                          href="javascript:void(0)"
-                          onclick="getAddress()"
-                          class="float-right"
-                          style="font-size: 14px; text-decoration: underline"
-                          ><i class="fa fa-location-dot"></i> Use My Current
-                          Location</a
+              <!-- fieldsets -->
+              <fieldset data-check-id="1">
+                <button
+                  type="submit"
+                  class="fv-hidden-submit"
+                  style="display: none; width: 0px; height: 0px"
+                ></button>
+                <div class="">
+                  <span class="row form-container">
+                    <span class="form-inner-container">
+                      <div class="col-sm-12 trip-selector">
+                        <label
+                          class="col-sm-6 col-6 p-1 trip first-trip boxShaddow"
+                          ><input
+                            type="radio"
+                            name="trip"
+                            value="1"
+                            onclick="$(&#39;.drop_date_group input, .drop_date_group select&#39;).attr(&#39;disabled&#39;,true)"
+                            checked=""
+                            data-fv-field="trip"
+                            data-gtm-form-interact-field-id="1"
+                          />
+                          ONE WAY</label
                         >
-                        <input
-                          type="search"
-                          style="font-size: 14px"
-                          class="form-control pac-target-input"
-                          name="from"
-                          id="from"
-                          placeholder="Enter Pickup Location"
-                          value=""
-                          data-fv-field="from"
-                          autocomplete="off"
-                        />
+                        <label class="col-sm-6 col-6 p-1 trip round-trip"
+                          ><input
+                            type="radio"
+                            name="trip"
+                            value="2"
+                            onclick="$(&#39;.drop_date_group input, .drop_date_group select&#39;).removeAttr(&#39;disabled&#39;,true);getDropTime()"
+                            data-fv-field="trip"
+                            data-gtm-form-interact-field-id="0"
+                          />
+                          ROUND TRIP</label
+                        >
                         <small
                           class="help-block"
                           data-fv-validator="notEmpty"
-                          data-fv-for="from"
-                          data-fv-result="NOT_VALIDATED"
+                          data-fv-for="trip"
+                          data-fv-result="VALID"
                           style="display: none"
-                          >Pickup location is required</small
+                          >Trip is required</small
                         >
                       </div>
-                    </div>
-                    <div class="col-sm-12 col-12 p-1">
-                      <div class="form-group">
-                        <label class="mb-0">DROP LOCATION</label>
-                        <input
-                          type="search"
-                          style="font-size: 14px"
-                          class="form-control pac-target-input"
-                          name="to"
-                          id="to"
-                          placeholder="Enter Drop Location"
-                          value=""
-                          data-fv-field="to"
-                          autocomplete="off"
-                        />
-                        <small
-                          class="help-block"
-                          data-fv-validator="notEmpty"
-                          data-fv-for="to"
-                          data-fv-result="NOT_VALIDATED"
-                          style="display: none"
-                          >Drop location is required</small
-                        >
+                      <div class="col-sm-12 col-12 p-1">
+                        <div class="form-group">
+                          <label class="mb-0">PICK-UP LOCATION</label
+                          ><a
+                            href="javascript:void(0)"
+                            onclick="getAddress()"
+                            class="float-right"
+                            style="font-size: 14px"
+                            ><i class="fa fa-location-dot"></i> Use My Current
+                            Location</a
+                          >
+                          <input
+                            type="search"
+                            style="font-size: 14px"
+                            class="form-control pac-target-input"
+                            name="from"
+                            id="from"
+                            placeholder="Enter Pickup Location"
+                            value=""
+                            data-fv-field="from"
+                            autocomplete="off"
+                          />
+                          <small
+                            class="help-block"
+                            data-fv-validator="notEmpty"
+                            data-fv-for="from"
+                            data-fv-result="NOT_VALIDATED"
+                            style="display: none"
+                            >Pickup location is required</small
+                          >
+                        </div>
                       </div>
-                    </div>
-                    <div class="form-group d-none">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="distance"
-                        id="distance"
-                      />
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="travel_duration"
-                        id="travel_duration"
-                      />
-                    </div>
-                    <div id="address"></div>
-                    <div class="col-sm-4 col-6 p-1">
-                      <div class="form-group">
-                        <label class="mb-0 dateLabel"
-                          >PICK-UP DATE &amp; TIME</label
-                        >
+                      <div class="col-sm-12 col-12 p-1">
+                        <div class="form-group">
+                          <label class="mb-0">DROP LOCATION</label>
+                          <input
+                            type="search"
+                            style="font-size: 14px"
+                            class="form-control pac-target-input"
+                            name="to"
+                            id="to"
+                            placeholder="Enter Drop Location"
+                            value=""
+                            data-fv-field="to"
+                            autocomplete="off"
+                          />
+                          <small
+                            class="help-block"
+                            data-fv-validator="notEmpty"
+                            data-fv-for="to"
+                            data-fv-result="NOT_VALIDATED"
+                            style="display: none"
+                            >Drop location is required</small
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group d-none">
                         <input
                           type="text"
-                          class="form-control dates"
-                          name="pickup_date"
-                          id="pickup_date"
-                          placeholder="DD-MM-YYYY"
-                          value="12-Aug-2023"
-                          readonly=""
-                          data-fv-field="pickup_date"
+                          class="form-control"
+                          name="distance"
+                          id="distance"
                         />
-                        <select
-                          class="form-control times"
-                          name="pickup_time"
-                          id="pickup_time"
-                          onchange="getDropTime()"
-                          data-fv-field="pickup_time"
-                        >
-                          <option>2:00 AM</option>
-                          <option>2:30 AM</option>
-                          <option>3:00 AM</option>
-                          <option>3:30 AM</option>
-                          <option>4:00 AM</option>
-                          <option>4:30 AM</option>
-                          <option>5:00 AM</option>
-                          <option>5:30 AM</option>
-                          <option>6:00 AM</option>
-                          <option>6:30 AM</option>
-                          <option>7:00 AM</option>
-                          <option>7:30 AM</option>
-                          <option>8:00 AM</option>
-                          <option>8:30 AM</option>
-                          <option>9:00 AM</option>
-                          <option>9:30 AM</option>
-                          <option>10:00 AM</option>
-                          <option>10:30 AM</option>
-                          <option>11:00 AM</option>
-                          <option>11:30 AM</option>
-                          <option>12:00 PM</option>
-                          <option>12:30 PM</option>
-                          <option>1:00 PM</option>
-                          <option>1:30 PM</option>
-                          <option>2:00 PM</option>
-                          <option>2:30 PM</option>
-                          <option>3:00 PM</option>
-                          <option>3:30 PM</option>
-                          <option>4:00 PM</option>
-                          <option>4:30 PM</option>
-                          <option>5:00 PM</option>
-                          <option>5:30 PM</option>
-                          <option>6:00 PM</option>
-                          <option>6:30 PM</option>
-                          <option>7:00 PM</option>
-                          <option>7:30 PM</option>
-                          <option>8:00 PM</option>
-                          <option>8:30 PM</option>
-                          <option>9:00 PM</option>
-                          <option>9:30 PM</option>
-                          <option>10:00 PM</option>
-                          <option>10:30 PM</option>
-                          <option>11:00 PM</option>
-                          <option>11:30 PM</option>
-                        </select>
-                        <small
-                          class="help-block"
-                          data-fv-validator="notEmpty"
-                          data-fv-for="pickup_date"
-                          data-fv-result="NOT_VALIDATED"
-                          style="display: none"
-                          >Pickup date is required</small
-                        >
-                      </div>
-                    </div>
-                    <div class="col-sm-4 col-6 p-1 returnDate hide">
-                      <div class="form-group drop_date_group">
-                        <label class="mb-0 dateLabel"
-                          >RETURN DATE &amp; TIME</label
-                        >
                         <input
                           type="text"
-                          class="form-control dates"
-                          id="drop_date"
-                          readonly=""
-                          name="drop_date"
-                          value="12-Aug-2023"
-                          data-fv-field="drop_date"
+                          class="form-control"
+                          name="travel_duration"
+                          id="travel_duration"
                         />
-                        <select
-                          class="form-control times"
-                          name="drop_time"
-                          id="drop_time"
-                          data-fv-field="drop_time"
-                        >
-                          <option>3:30 AM</option>
-                          <option>4:00 AM</option>
-                          <option>4:30 AM</option>
-                          <option>5:00 AM</option>
-                          <option>5:30 AM</option>
-                          <option>6:00 AM</option>
-                          <option>6:30 AM</option>
-                          <option>7:00 AM</option>
-                          <option>7:30 AM</option>
-                          <option>8:00 AM</option>
-                          <option>8:30 AM</option>
-                          <option>9:00 AM</option>
-                          <option>9:30 AM</option>
-                          <option>10:00 AM</option>
-                          <option>10:30 AM</option>
-                          <option>11:00 AM</option>
-                          <option>11:30 AM</option>
-                          <option>12:00 PM</option>
-                          <option>12:30 PM</option>
-                          <option>1:00 PM</option>
-                          <option>1:30 PM</option>
-                          <option>2:00 PM</option>
-                          <option>2:30 PM</option>
-                          <option>3:00 PM</option>
-                          <option>3:30 PM</option>
-                          <option>4:00 PM</option>
-                          <option>4:30 PM</option>
-                          <option>5:00 PM</option>
-                          <option>5:30 PM</option>
-                          <option>6:00 PM</option>
-                          <option>6:30 PM</option>
-                          <option>7:00 PM</option>
-                          <option>7:30 PM</option>
-                          <option>8:00 PM</option>
-                          <option>8:30 PM</option>
-                          <option>9:00 PM</option>
-                          <option>9:30 PM</option>
-                          <option>10:00 PM</option>
-                          <option>10:30 PM</option>
-                          <option>11:00 PM</option>
-                          <option>11:30 PM</option>
-                        </select>
-                        <small
-                          class="help-block"
-                          data-fv-validator="notEmpty"
-                          data-fv-for="drop_date"
-                          data-fv-result="NOT_VALIDATED"
-                          style="display: none"
-                          >Drop date is required</small
-                        >
                       </div>
-                    </div>
-                    <div class="col-sm-4 col-12 p-0 pl-1 pr-1">
-                      <button
-                        class="btn btn-lg btn-primary"
-                        type="submit"
-                        id="bookNow"
-                      >
-                        Enquire Now
-                      </button>
-                    </div>
+                      <div id="address"></div>
+                      <div class="col-sm-6 col-6 p-1 pickup-details">
+                        <div class="form-group">
+                          <label class="mb-0 dateLabel"
+                            >PICK-UP DATE &amp; TIME</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control dates"
+                            name="pickup_date"
+                            id="pickup_date"
+                            placeholder="DD-MM-YYYY"
+                            value="12-Aug-2023"
+                            readonly=""
+                            data-fv-field="pickup_date"
+                          />
+                          <select
+                            class="form-control times"
+                            name="pickup_time"
+                            id="pickup_time"
+                            onchange="getDropTime()"
+                            data-fv-field="pickup_time"
+                          >
+                            <option>2:00 AM</option>
+                            <option>2:30 AM</option>
+                            <option>3:00 AM</option>
+                            <option>3:30 AM</option>
+                            <option>4:00 AM</option>
+                            <option>4:30 AM</option>
+                            <option>5:00 AM</option>
+                            <option>5:30 AM</option>
+                            <option>6:00 AM</option>
+                            <option>6:30 AM</option>
+                            <option>7:00 AM</option>
+                            <option>7:30 AM</option>
+                            <option>8:00 AM</option>
+                            <option>8:30 AM</option>
+                            <option>9:00 AM</option>
+                            <option>9:30 AM</option>
+                            <option>10:00 AM</option>
+                            <option>10:30 AM</option>
+                            <option>11:00 AM</option>
+                            <option>11:30 AM</option>
+                            <option>12:00 PM</option>
+                            <option>12:30 PM</option>
+                            <option>1:00 PM</option>
+                            <option>1:30 PM</option>
+                            <option>2:00 PM</option>
+                            <option>2:30 PM</option>
+                            <option>3:00 PM</option>
+                            <option>3:30 PM</option>
+                            <option>4:00 PM</option>
+                            <option>4:30 PM</option>
+                            <option>5:00 PM</option>
+                            <option>5:30 PM</option>
+                            <option>6:00 PM</option>
+                            <option>6:30 PM</option>
+                            <option>7:00 PM</option>
+                            <option>7:30 PM</option>
+                            <option>8:00 PM</option>
+                            <option>8:30 PM</option>
+                            <option>9:00 PM</option>
+                            <option>9:30 PM</option>
+                            <option>10:00 PM</option>
+                            <option>10:30 PM</option>
+                            <option>11:00 PM</option>
+                            <option>11:30 PM</option>
+                          </select>
+                          <small
+                            class="help-block"
+                            data-fv-validator="notEmpty"
+                            data-fv-for="pickup_date"
+                            data-fv-result="NOT_VALIDATED"
+                            style="display: none"
+                            >Pickup date is required</small
+                          >
+                        </div>
+                      </div>
+                      <div class="col-sm-4 col-6 p-1 returnDate hide">
+                        <div class="form-group drop_date_group">
+                          <label class="mb-0 dateLabel"
+                            >RETURN DATE &amp; TIME</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control dates"
+                            id="drop_date"
+                            readonly=""
+                            name="drop_date"
+                            value="12-Aug-2023"
+                            data-fv-field="drop_date"
+                          />
+                          <select
+                            class="form-control times"
+                            name="drop_time"
+                            id="drop_time"
+                            data-fv-field="drop_time"
+                          >
+                            <option>3:30 AM</option>
+                            <option>4:00 AM</option>
+                            <option>4:30 AM</option>
+                            <option>5:00 AM</option>
+                            <option>5:30 AM</option>
+                            <option>6:00 AM</option>
+                            <option>6:30 AM</option>
+                            <option>7:00 AM</option>
+                            <option>7:30 AM</option>
+                            <option>8:00 AM</option>
+                            <option>8:30 AM</option>
+                            <option>9:00 AM</option>
+                            <option>9:30 AM</option>
+                            <option>10:00 AM</option>
+                            <option>10:30 AM</option>
+                            <option>11:00 AM</option>
+                            <option>11:30 AM</option>
+                            <option>12:00 PM</option>
+                            <option>12:30 PM</option>
+                            <option>1:00 PM</option>
+                            <option>1:30 PM</option>
+                            <option>2:00 PM</option>
+                            <option>2:30 PM</option>
+                            <option>3:00 PM</option>
+                            <option>3:30 PM</option>
+                            <option>4:00 PM</option>
+                            <option>4:30 PM</option>
+                            <option>5:00 PM</option>
+                            <option>5:30 PM</option>
+                            <option>6:00 PM</option>
+                            <option>6:30 PM</option>
+                            <option>7:00 PM</option>
+                            <option>7:30 PM</option>
+                            <option>8:00 PM</option>
+                            <option>8:30 PM</option>
+                            <option>9:00 PM</option>
+                            <option>9:30 PM</option>
+                            <option>10:00 PM</option>
+                            <option>10:30 PM</option>
+                            <option>11:00 PM</option>
+                            <option>11:30 PM</option>
+                          </select>
+                          <small
+                            class="help-block"
+                            data-fv-validator="notEmpty"
+                            data-fv-for="drop_date"
+                            data-fv-result="NOT_VALIDATED"
+                            style="display: none"
+                            >Drop date is required</small
+                          >
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-12 p-0 pl-1 pr-1 book-btn">
+                        <button
+                          class="btn btn-lg btn-primary"
+                          type="submit"
+                          id="bookNow"
+                          onclick="sendWAConfirmation()"
+                        >
+                          Book Now
+                        </button>
+                      </div>
+                    </span>
                   </span>
-                </span>
-              </div>
+                </div>
+              </fieldset>
+              <!-- progressbar -->
+              <ul class="progressbar">
+                <li class="active">Step 1</li>
+                <li>Step 2</li>
+                <li>Step 3</li>
+              </ul>
             </form>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- About us -->
+    <section style="width: 100%" id="about-section">
+      <div class="row">
+        <h2>About Us</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-6">
+          <div class="">
+            <div class="choose__image-container">
+              <!-- <img src="assets/images/svg/calendar.svg" alt="" class="choose__image"> -->
+              <img
+                src="img/available.jpg"
+                alt=""
+                class="choose__image square"
+              />
+            </div>
+            <h6>24 x 7 Customer Service</h6>
+          </div>
+          <div class="">
+            <div class="choose__image-container">
+              <!-- <img src="assets/images/svg/best-price.svg" alt="" class="choose__image"> -->
+              <!-- <img src="assets/images/svg/budget-c.svg" alt="" class="choose__image"> -->
+              <img src="img/save.jpg" alt="" class="choose__image square" />
+            </div>
+            <h6>Transperent Pricing</h6>
+          </div>
+          <div class="">
+            <div class="choose__image-container">
+              <!-- <img src="assets/images/svg/camper-van.svg" alt="" class="choose__image"> -->
+              <img src="img/stereo.jpg" alt="" class="choose__image square" />
+            </div>
+            <h6>Stereos and multimedia support</h6>
+          </div>
+          <!-- <div class="">
+            <div class="choose__image-container">
+              <img
+                src="assets/images/choose-us/3.jpg"
+                alt=""
+                class="choose__image square"
+              />
+            </div>
+            <h6>Speed Limit</h6>
+          </div> -->
+        </div>
+        <div class="col-md-4 hide-mobile" style="position: relative">
+          <img class="car-image" src="img/car-big-side.png" alt="" />
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="">
+            <div class="choose__image-container">
+              <img
+                src="img/professional.jpg"
+                alt=""
+                class="choose__image square"
+              />
+            </div>
+            <h6>Well Trained and Friendly Drivers</h6>
+          </div>
+          <div class="">
+            <div class="choose__image-container">
+              <img src="img/time.jpg" alt="" class="choose__image square" />
+            </div>
+            <h6>Always on Time</h6>
+          </div>
+          <div class="">
+            <div class="choose__image-container">
+              <img
+                src="img/maintained.jpg"
+                alt=""
+                class="choose__image square"
+              />
+            </div>
+            <h6>Clean and Well maintained Cars</h6>
+          </div>
+          <!-- <div class="">
+            <div class="choose__image-container">
+              <img
+                src="assets/images/choose-us/2.jpg"
+                alt=""
+                class="choose__image square"
+              />
+            </div>
+            <h6>Corona safety guidelines followed</h6>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Traiff -->
+    <section style="width: 100%" id="tariff-section">
+      <div class="row">
+        <h2>Our Transperant Traiff</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="single-taxi-one">
+            <div class="inner-content">
+              <img src="img/WHITE_d0d2d4.webp" alt="Awesome Image" />
+              <!-- <div class="icon-block">
+                        <i class="conexi-icon-bmw"></i>
+                    </div> --><!-- /.icon-block -->
+              <h3>sedan</h3>
+              <ul class="feature-list">
+                <li>
+                  <span class="name-line">ONE WAY DROP</span>
+                  <span class="price-line">₹13/Km</span>
+                </li>
+                <li>
+                  <span class="name-line">ROUND WAY TRIP</span>
+                  <span class="price-line">₹12/Km</span>
+                </li>
+                <li>
+                  <span class="name-line">DRIVER BATA </span>
+                  <span class="price-line">₹300</span>
+                </li>
+                <li>
+                  <span class="name-line" style="text-align: left"
+                    >DRIVER BATA (above 400km)</span
+                  >
+                  <span class="price-line">₹400</span>
+                </li>
+                <li>
+                  <span class="name-line" style="text-align: left"
+                    >SEATING CAPACITY</span
+                  >
+                  <span class="price-line">4+1</span>
+                </li>
+              </ul>
+              <!-- /.feature-list -->
+              <a href="#book" class="book-taxi-btn">Book Taxi</a>
+            </div>
+            <!-- /.inner-content -->
+          </div>
+          <!-- /.single-taxi-one -->
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+          <div class="single-taxi-one">
+            <div class="inner-content">
+              <img src="img/innova.webp" alt="Awesome Image" />
+              <!-- <div class="icon-block">
+                        <i class="conexi-icon-mercedes-benz"></i>
+                    </div> --><!-- /.icon-block -->
+              <h3>suv</h3>
+              <ul class="feature-list">
+                <li>
+                  <span class="name-line">ONE WAY DROP</span>
+                  <span class="price-line">₹18/Km</span>
+                </li>
+                <li>
+                  <span class="name-line">ROUND WAY TRIP</span>
+                  <span class="price-line">₹17/Km</span>
+                </li>
+                <li>
+                  <span class="name-line">DRIVER BATA </span>
+                  <span class="price-line">₹400</span>
+                </li>
+                <li>
+                  <span class="name-line" style="text-align: left"
+                    >DRIVER BATA (above 400km)</span
+                  >
+                  <span class="price-line">₹500</span>
+                </li>
+                <li>
+                  <span class="name-line" style="text-align: left"
+                    >SEATING CAPACITY</span
+                  >
+                  <span class="price-line">7+1</span>
+                </li>
+              </ul>
+              <!-- /.feature-list -->
+              <a href="#book" class="book-taxi-btn">Book Taxi</a>
+            </div>
+            <!-- /.inner-content -->
+          </div>
+          <!-- /.single-taxi-one -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Call us -->
+    <section class="cta-section padding">
+      <div
+        class="cta-men wow fade-in-bottom"
+        data-wow-delay="200ms"
+        style="
+          visibility: visible;
+          animation-delay: 200ms;
+          animation-name: fade-in-bottom;
+        "
+      ></div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>
+            Call Us Now <span>Book Your Taxi</span> <br />
+            For Your Next Ride!
+          </h2>
+          <p>
+            We successfully cope with tasks of varying complexity,<br />guarantees
+            and regularly master new technologies.
+          </p>
+          <div class="cta-call">
+            <i class="las la-phone-volume"></i>
+            <p>
+              <span>Call or WhatsApp </span
+              ><a href="tel:7418320444"> 7418-320-444</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Famous Routes -->
+    <section style="width: 100%" id="places-section">
+      <div class="container">
+        <div class="d-flex jc-between ai-center">
+          <div class="row">
+            <h2 class="" style="text-align: center">Popular Trips</h2>
+          </div>
+          <!-- <a href="/outstation-cabs" class="view-btn">View All</a> -->
+        </div>
+        <div class="row">
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img src="img/droptaxi-Chennai.jpg" alt="popular trips" />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="/outstation-cabs/chennai-tiruchirappalli-taxi"
+                    >Trichy to Chennai at Rs.5137</a
+                  >
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-tiruchirappalli-taxi"
+                    >View more</a
+                  >
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img src="img/droptaxi-Coimbatore3.jpg" alt="popular trips" />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="/outstation-cabs/chennai-coimbatore-taxi"
+                    >Trichy to Coimbatore at Rs.7722</a
+                  >
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-coimbatore-taxi"
+                    >View more</a
+                  >
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img
+                src="/img/Madurai-Meenakshi-Temple-History-Timings-How-to-Reach.avif"
+                alt="popular trips"
+              />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="/outstation-cabs/chennai-madurai-taxi"
+                    >Trichy to Madurai at Rs.7050</a
+                  >
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-madurai-taxi">View more</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img src="img/droptaxi-Kanyakumari.jpg" alt="popular trips" />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="/outstation-cabs/chennai-vellore-taxi"
+                    >Trichy to Kanyakumari at Rs.2099</a
+                  >
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-vellore-taxi">View more</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img src="img/droptaxi-Pondicherry.jpg" alt="popular trips" />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="/outstation-cabs/chennai-pondicherry-taxi"
+                    >Trichy to Pondicherry at Rs.2199</a
+                  >
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-pondicherry-taxi"
+                    >View more</a
+                  >
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img src="img/droptaxi-Rameshwaram.jpg" alt="popular trips" />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="img/droptaxi-Rameshwaram.jpg"
+                    >Trichy to Rameshwaram at Rs.2956</a
+                  >
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-tirupati-taxi">View more</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img src="img/droptaxi-Thiruvanamalai.jpg" alt="popular trips" />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="">Trichy to Tiruvannamalai at Rs.3057</a>
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-tiruvannamalai-taxi"
+                    >View more</a
+                  >
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img src="img/droptaxi-Bangalore.jpg" alt="popular trips" />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="">Trichy to Bangalore at Rs.4899</a>
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-bangalore-taxi"
+                    >View more</a
+                  >
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="c-lg-4 c-md-6 c-12 mb-4">
+            <div class="card ptr-card">
+              <img src="img/droptaxi-Salem.jpg" alt="popular trips" />
+              <div class="px-sm-3 px-2 py-2">
+                <h6>
+                  <a href="/outstation-cabs/chennai-salem-taxi"
+                    >Trichy to Salem at Rs.5367</a
+                  >
+                </h6>
+                <p>One-way taxi</p>
+                <!-- <div class="t-ryt">
+                  <a href="/outstation-cabs/chennai-salem-taxi">View more</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- <section
       data-vc-full-width="true"
@@ -581,7 +972,19 @@
         </div>
       </div>
     </form> -->
-    <section style="width: 100%; height: 500px"></section>
+    <!-- <section style="width: 100%; height: 500px"></section> -->
+
+    <div class="callus-logo">
+      <a href="tel:+917418320444">
+        <img class="phonecall" src="img/call.png" alt="" /><br />
+        Click to Call
+      </a>
+
+      <span>or</span>
+      <a href="https://wa.me/917418320444" target="_blank">
+        <img class="whatsapp" src="img/whatsapp-full.png" alt="" />
+      </a>
+    </div>
 
     <footer
       class="footer-wrapper footer-layout7 background-image"
@@ -669,7 +1072,7 @@
                     ><i class="fab fa-linkedin-in"></i
                   ></a>
                   <a href="https://www.behance.net/"
-                    ><i class="fa-brands fa-behance"></i
+                    ><i class="fa-brands fa-instagram"></i
                   ></a>
                 </div>
               </div>
@@ -694,15 +1097,20 @@
 
     <script>
       $(".round-trip").click(function () {
-        $(".round-trip").addClass("boxShaddow");
-        $(".first-trip").removeClass("boxShaddow");
-        $(".returnDate").removeClass("hide");
+        $(".pickup-details").removeClass("col-sm-6").addClass("col-sm-4");
+        $(".book-btn").removeClass("col-sm-6").addClass("col-sm-4");
+        $(".returnDate").show();
       });
       $(".first-trip").click(function () {
-        $(".first-trip").addClass("boxShaddow");
-        $(".round-trip").removeClass("boxShaddow");
-        $(".returnDate").addClass("hide");
+        $(".pickup-details").removeClass("col-sm-4").addClass("col-sm-6");
+        $(".book-btn").removeClass("col-sm-4").addClass("col-sm-6");
+        $(".returnDate").hide();
       });
+      function sendWAConfirmation() {
+        let url =
+          "https://wa.me/9597174783?text= your booking enquire has been received and confirm you some time.";
+        window.open(url, "_blank");
+      }
     </script>
   </body>
 </html>
