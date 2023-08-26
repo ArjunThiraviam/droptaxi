@@ -20428,7 +20428,8 @@ hr.style1 {
 #searchCabForm .form-control {
   border: 0px !important;
   background: #fff !important;
-  padding: 0px !important;
+  padding: 0px ;
+  padding-right: 10px;
 }
 #searchCabForm .form-control:focus {
   box-shadow: 0 0 0 0.2rem #fff !important;
@@ -20446,9 +20447,7 @@ hr.style1 {
   border-right: 1px solid #ccc !important;
   border-radius: 0px;
 }
-#searchCabForm .dates:after {
-  content: "\f0d7";
-}
+
 #searchCabForm .times {
   width: 40% !important;
   float: left;
@@ -20842,6 +20841,7 @@ footer .om-container {
 }
 #places-section a {
   font-weight: 600;
+  color: #007bf;
 }
 
 

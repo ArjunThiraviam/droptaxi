@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyD07n2byt5-fDVkhcBicQfK8VawQRyeCVQ"></script>
+  </head>
+  <body>
+    <!-- Autocomplete location search input -->
+    <div class="form-group">
+      <label>Location:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="from_input"
+        placeholder="Type address..."
+      />
+    </div>
+
+    <!-- Display latitude and longitude -->
+
+    <script>
+      var searchInput = "from_input";
+
+      $(document).ready(function () {
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById(searchInput),
+          {
+            types: ["geocode"],
+            componentRestrictions: {
+              country: "IND",
+            },
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
