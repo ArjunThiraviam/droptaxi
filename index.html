@@ -1218,8 +1218,8 @@
               var duration_text = duration.text;
               var duration_value = duration.value;
               ourDistance =
-                distance_in_kilo.toFixed(2) > 300
-                  ? distance_in_kilo.toFixed(2)
+                distance_in_kilo.toFixed(0) > 130
+                  ? distance_in_kilo.toFixed(0)
                   : 130;
               console.log("ourDistance", ourDistance);
               bata = ourDistance > 400 ? 400 : 300;
