@@ -8,3 +8,66 @@
     width: 100%;
     justify-content: space-evenly;
 }
+
+#form-cab-details img {
+    max-width: 200px;
+}
+
+#form-cab-details {
+    display: none;
+}
+
+#form-cab-details .form-inner-container {
+    z-index: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#form-cab-details .form-inner-container > div {
+    background-color: #fff;
+    width: 40%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    max-width: 420px;
+}
+
+#form-cab-details .form-inner-container h6 {
+    color: #1274b9;
+    text-align: center;
+    font-weight: 600;
+}
+
+.cost-details-container {
+    display: flex;
+}
+
+.car-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#form-cab-details .form-inner-container ul {
+    margin: 5px auto;
+}
+
+#form-cab-details .form-inner-container li {
+    text-align: left;
+    font-size: 12px;
+    line-height: 16px;    
+}
+
+.cost-details-container  div {
+    text-align: left;
+}
+
+.cost-details-container button {
+    background-color: #1274b9;
+    color: #fff;
+    padding: 5px 20px;
+    border: 0px;
+    border-radius: 20px;
+    margin: 10px 30px;
+}
