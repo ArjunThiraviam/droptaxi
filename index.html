@@ -322,7 +322,7 @@
                         <button
                           class="btn btn-lg btn-primary"
                           type="submit"
-                          id="bookNow"
+                          id="checkprice"
                         >
                           Check Price
                         </button>
@@ -346,7 +346,7 @@
                           <div>ONE WAY</div>
                           <div>Cost: <span id="sedan-cost"></span></div>
                           <div class="km-distance">Km: <span></span></div>
-                          <button>Book Now</button>
+                          <button id="sedan-selected">Book Now</button>
                         </div>
                       </div>
                       <div class="car-features">
@@ -384,7 +384,7 @@
                           <div>ONE WAY</div>
                           <div>Cost: <span id="suv-cost"></span></div>
                           <div class="km-distance">Km: <span></span></div>
-                          <button>Book Now</button>
+                          <button id="suv-selected">Book Now</button>
                         </div>
                       </div>
                       <div class="car-features">
@@ -414,6 +414,83 @@
                           </li>
                           <li>Minimum running must be 130 kms.</li>
                         </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset id="form-user-details">
+                <div class="row form-container">
+                  <div class="form-inner-container">
+                    <div>
+                      <div class="input-container">
+                        <div class="col-sm-6 col-6 p-1">
+                          <div class="form-group">
+                            <label for="">Name</label>
+                            <input class="form-control" type="text" />
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-6 p-1">
+                          <div class="form-group">
+                            <label for="">Mobile Number</label>
+                            <input class="form-control" type="text" />
+                          </div>
+                        </div>
+                        <!-- <div>
+                        <label for="">Alternate Mobile Number (optional)</label>
+                        <input type="text" />
+                      </div> -->
+                      </div>
+                      <div class="input-container">
+                        <div class="col-sm-6 col-6 p-1">
+                          <div class="form-group">
+                            <label for="">Email (optional)</label>
+                            <input class="form-control" type="text" />
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-3 p-1">
+                          <div class="form-group-col form-group">
+                            <label for="">Number of Passengers</label>
+                            <select name="passengers" id="passengers">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </div>
+                        </div>
+                        <!-- <div>
+                          <label for="">Number of Kids</label>
+                          <select name="kids" id="kids">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                        </div> -->
+                        <div class="col-sm-3 col-3 p-1">
+                          <div class="form-group form-group-col">
+                            <label for="">Number of Luggages</label>
+                            <select name="luggages" id="luggages">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input-container">
+                        <div class="col-sm-6 col-6 p-1">
+                          <div class="form-group">
+                            <label for="">Remarks</label>
+                            <input class="form-control" type="textarea" />
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-6 p-1">
+                          <button class="btn-primary">Book Now</button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1244,10 +1321,24 @@
           }
         }
         // print results on submit the form
-        $("#searchCabForm").submit(function (e) {
+        $("#checkprice").click(function (e) {
           $("#form-trip-details").hide();
           $("#form-cab-details").show();
           $(".progressbar li:nth-child(2)").addClass("active");
+          e.preventDefault();
+          calculateDistance();
+        });
+        $("#sedan-selected").click(function (e) {
+          $("#form-cab-details").hide();
+          $("#form-user-details").show();
+          $(".progressbar li:nth-child(3)").addClass("active");
+          e.preventDefault();
+          calculateDistance();
+        });
+        $("#suv-selected").click(function (e) {
+          $("#form-cab-details").hide();
+          $("#form-user-details").show();
+          $(".progressbar li:nth-child(3)").addClass("active");
           e.preventDefault();
           calculateDistance();
         });

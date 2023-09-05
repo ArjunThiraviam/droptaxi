@@ -20453,7 +20453,7 @@ hr.style1 {
   float: left;
   text-align: center;
 }
-#bookNow {
+#checkprice {
   width: 100%;
   height: 75px;
   font-size: 1.5rem;
@@ -20738,7 +20738,7 @@ footer .om-container {
 }
 
 
-.btn-primary#bookNow {
+.btn-primary#checkprice {
   border-radius: 15px;
 }
 
